@@ -10,7 +10,7 @@ first start kafka zookeeper server and broker
 
 verify it works by the console:
 `./bin/kafka-console-producer.sh --topic test --broker-list localhost:9092`
-`./bin/kafka-console-consumer.sh --topic test --bootstrap-server localhost:9092``
+`./bin/kafka-console-consumer.sh --topic test --bootstrap-server localhost:9092`
 
 run kafkaStreamingJob with program argument:
 `--topic test --bootstrap.servers localhost:9092 --zookeeper.connect localhost:2181 --group.id myGroup`
@@ -22,7 +22,7 @@ produce something in producer console, verify console prints the expected aggreg
 
 
 
-Source:
+Source: \n
 Basic batch/stream processing
 https://github.com/apache/flink/tree/master/flink-examples/flink-examples-streaming/src
 
