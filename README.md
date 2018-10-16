@@ -8,6 +8,9 @@ first start kafka zookeeper server and broker
 `./bin/zookeeper-server-start.sh ./config/zookeeper.properties`
 `./bin/kafka-server-start.sh ./config/server.properties`
 
+create topic:
+`./bin/kafka-topics.sh --create --topic test --zookeeper localhost:2181 --partitions 1 --replication-factor 1`
+
 verify it works by the console:
 `./bin/kafka-console-producer.sh --topic test --broker-list localhost:9092`
 `./bin/kafka-console-consumer.sh --topic test --bootstrap-server localhost:9092`
