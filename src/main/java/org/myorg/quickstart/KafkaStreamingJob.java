@@ -7,8 +7,7 @@ import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer08;
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer082;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
 import org.apache.flink.util.Collector;
 
 // tutorial from https://data-artisans.com/blog/kafka-flink-a-practical-how-to
@@ -22,7 +21,7 @@ public class KafkaStreamingJob
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         ParameterTool parameterTool = ParameterTool.fromArgs(args);
-        DataStream < String > messageStream = env.addSource(new FlinkKafkaConsumer08< >(parameterTool.getRequired("topic"), new SimpleStringSchema(), parameterTool.getProperties()));
+        DataStream < String > messageStream = env.addSource(new FlinkKafkaConsumer011< >(parameterTool.getRequired("topic"), new SimpleStringSchema(), parameterTool.getProperties()));
 
 
         DataStream<Tuple2<String, Integer>> dataStream = messageStream
